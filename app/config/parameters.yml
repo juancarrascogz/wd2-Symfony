@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: base_de_datos_tecnocomponentes_3
+    database_user: appuser
+    database_password: '111'
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 92576e0b3f3abeb6ac997b67fbce9bb9b1604bc5

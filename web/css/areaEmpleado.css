@@ -1,0 +1,23 @@
+#areaEmpleados h3{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-decoration: underline;
+}
+#areaEmpleados ul{
+    text-align: center;
+    list-style: none;
+}
+#areaEmpleados ul li{
+    margin-bottom: 2%;
+}
+#areaEmpleados ul li a{
+    text-decoration: none;
+    color: #000;
+}
+#areaEmpleados ul li a:hover{
+    color: #6600cc;
+}
+#areaEmpleados ul li a:active{
+    color: #ff8000;
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Gestión Catálogo{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/areaAdmin.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="areaAdmin" class="div_main_short">
+                    
+    <h3>GESTIÓN CATÁLOGO</h3>
+    <ul>
+        <li><a href="{{path('add-categoria')}}" title="Nueva Categoría">Nueva Categoría</a></li>
+        <li><a href="{{path('editar-categoria')}}" title="Editar Categoría">Editar Categoría</a></li>
+        <li><a href="{{path('eliminar-categoria')}}" title="Eliminar Categoría">Eliminar Categoría</a></li>
+        <li><a href="{{path('add-producto')}}" title="Nuevo Producto">Nuevo Producto</a></li>
+        <li><a href="{{path('editar-producto')}}" title="Editar Producto">Editar Producto</a></li>
+        <li><a href="{{path('eliminar-producto')}}" title="Eliminar Producto">Eliminar Producto</a></li>
+        <li><a href="{{path('listado-productos-todas-tiendas')}}" title="Trasladar Producto">Trasladar Producto</a></li>
+    </ul>
+</div>
+
+{% endblock %}

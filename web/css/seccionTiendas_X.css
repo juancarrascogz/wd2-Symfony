@@ -1,0 +1,23 @@
+#seccionTiendasValladolid h3{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-decoration: underline;
+}
+#seccionTiendasValladolid ul{
+    text-align: center;
+    list-style: none;
+}
+#seccionTiendasValladolid ul li{
+    margin-bottom: 2%;
+}
+#seccionTiendasValladolid ul li a{
+    text-decoration: none;
+    color: #000;
+}
+#seccionTiendasValladolid ul li a:hover{
+    color: #6600cc;
+}
+#seccionTiendasValladolid ul li a:active{
+    color: #ff8000;
+}

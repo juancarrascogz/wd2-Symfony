@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Traslardar Producto{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/misDatos.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="misDatos" class="div_main">
+                
+    <h3>TRASLADAR ELEMENTOS</h3>
+    <form id="datos_trasladar" action="{{ path('trasladar-producto_post') }}" method="post">
+            
+            <div class="campos_reg bold">
+                <p>Producto: {{producto.name}}</p>
+                <br/>
+                <p>Stock (elementos): <span id="stock_producto">{{stock}}</span></p>
+                <br/>
+                <p>Tienda actual: {{tienda.nombre}}</p>
+            </div>
+
+            <div class="campos_reg bold">
+                    <label for="stock_trasladar">Cantidad de elementos a trasladar:<span class="red">*</span> <br/></label>
+                    <input id="stock_trasladar" name="stock_trasladar" type="text" title="Número de elementos a trasladar" placeholder="Escriba aqui" size="50"/>
+            </div>
+
+            <div id="selector_tienda" class="campos_reg bold">
+                    <p class="campos_reg">Tienda destino:</p>
+                        <select id="tienda_asignada" name="tienda_asignada">
+                            {% for t in tiendas %}
+                                <option value="{{t.getTiendas_id}}">{{t.nombre}}</option>
+                            {% endfor %}
+                        </select>
+            </div>
+    
+        <div style="display: none"><input id="producto_id" name="producto_id" type="text" title="producto_id" size="10" value="{{producto.getProducto_id}}"/></div>
+
+        <div id="errMsg" class="error bold red" style="display: none"></div>
+
+        <button id="guardar_cambios" class="bold" title="Trasladar">Trasladar</button>
+    </form>
+                        
+</div>
+
+
+{% block javascripts %} <script src="{{asset('funciones/trasladar.js')}}"></script> {% endblock %}
+
+
+{% endblock %}

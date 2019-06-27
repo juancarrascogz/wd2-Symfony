@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Compra realizada{% endblock %}
+
+{% block stylesheets %}        
+        <link rel="stylesheet" type="text/css" href="{{asset('css/monedero.css')}}" media="all">
+
+{% endblock %}
+
+
+
+{% block body %}
+
+<div id="monedero" class="div_main_short">
+                    
+<h3></br>Compra realizada con éxito</h3>
+
+<p>Si lo desea puede ver e imprimir su factura en el siguiente enlace.</p>
+<p><a href="{{path('factura')}}">Factura</a></p>
+<p>Una copia de su factura ha sido enviada a su email.</p>
+
+<p></br>Además puede consultar sus últimos pedidos en su perfil de cliente en el apartado: "Mis Pedidos / Últimas Compras".</p>
+
+<p></br>Para volver a su perfil de cliente pulse <a href="{{path('areaCliente')}}">aquí</a></p>
+
+
+</div>
+
+{% endblock %}

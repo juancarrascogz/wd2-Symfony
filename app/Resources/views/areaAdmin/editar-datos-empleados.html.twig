@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Editar Datos Empleado{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/misDatos.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="misDatos" class="div_main">
+                
+    <h3>DATOS EMPLEADO</h3>
+    <form id="datos_cambio" action="{{ path('editar-datos-empleados_post') }}" method="post">
+            <div class="campos_reg bold">
+                <label for="nombre_cambios">Nombre<span class="red">*</span><br/></label>
+                <input id="nombre_cambios" name="nombre_cambios" type="text" title="Nombre" size="50" value="{{user.nombre}}"/>  <!-- required /> -->
+            </div>
+
+            <div class="campos_reg bold">
+                <label for="apellidos_cambios">Apellidos<span class="red">*</span><br/></label> 
+                <input id="apellidos_cambios" name="apellidos_cambios" type="text" title="Apellidos" size="50" value="{{user.apellidos}}"/> <!-- required /> -->
+            </div> 
+
+            <div class="campos_reg bold">
+                    <label for="dni_cambios">DNI (no modificable)<br/></label>
+                    <input id="dni_cambios" name="dni_cambios" type="text" pattern="[0-9]{8}[A-Za-z]{1}" title="DNI (e.g. 72243551L)" placeholder="Escriba aqui" size="50" value="{{user.dni}}" readonly/> <!-- required /> -->
+            </div>
+
+            <div class="campos_reg bold">
+                    <label for="email">Email (no modificable)<br/> </label><input id="email" name="email" type="email" title="Email" placeholder="tecnocomponentes@gmail.com" size="50" value="{{user.email}}" readonly/> <!-- required /> -->
+            </div>
+
+            <div class="campos_reg bold">
+                    <label for="cargo_tienda_cambios">Cargo en la tienda<br/></label>
+                    <input id="cargo_tienda_cambios" name="cargo_tienda_cambios" type="text" title="Cargo Tienda" placeholder="Escriba aqui" size="50" value="{{user.getEmpleados.cargo}}"/> <!-- required /> -->
+            </div>
+
+            <div id="selector_tienda" class="campos_reg bold">
+                    <p class="campos_reg">Tienda Asignada</p>
+                        <select id="tienda_asignada_cambios" name="tienda_asignada_cambios">
+                            {% for tienda in tiendas %} 
+                                {% if tienda.visible != 0 %}
+                                    <option value="{{tienda.getTiendas_id}}"> {{tienda.nombre}}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+            </div>
+
+            <div class="foto">
+                    <p><span class="bold">Foto: </span>{{user.getEmpleados.getFotoNombre}} </p>
+                    <p><img src ="editar-datos-empleado-download.php?id=<?php echo $datos_empleado->getFotoId();?>&action=view&num_empleado=<?php echo $datos_empleado->getNumEmpleado()?>" title="imagen_empleado" width="100" height="auto"></p>
+                    <p><a target="_blank" href="editar-datos-empleado-download.php?id=<?php echo $datos_empleado->getFotoId();?>&num_empleado= <?php echo $datos_empleado->getNumEmpleado()?>">Descargar</a></p>
+            </div>
+
+        <div style="display: none"><input id="idUsuarios" name="idUsuarios" type="text" title="idUsuarios" size="10" value="{{user.getIdUsuarios}}"/></div>
+
+        <div id="errMsg_cambios" class="error bold red" style="display: none"></div>
+
+        <button id="guardar_cambios" class="bold" title="Guardar cambios">Guardar Cambios</button>
+    </form>
+    
+    <p class="atras"><a href="{{path('editar-empleado')}}">Volver atrás</a></p>
+
+    
+</div>
+
+{% block javascripts %} <script src="{{asset('funciones/editar-empleado.js')}}"></script> {% endblock %}
+
+{% endblock %}

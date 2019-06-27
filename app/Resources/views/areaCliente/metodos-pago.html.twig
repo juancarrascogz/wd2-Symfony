@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Métodos Pago{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/metodoPago.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+    <div id="metodosPago" class="div_main">
+        <h3>Métodos de Pago</h3>
+        
+            <div class="campos_reg bold">
+                <label for="nombre_usuario">Seleccione uno:<br/><br/></label>
+                
+                <input type="radio" name="clase_card" id="boton_card" value="card" checked> <b>Tarjeta de crédito</b>
+                <input type="radio" name="clase_card" id="boton_paypal" value="paypal"> <b>Paypal</b>
+            </div>
+            
+            <div id="id_card">
+                <form id="datos_registro2_card" method="post">
+                    
+                    
+                <div id="imagenes_card"> 
+                    <img src="{{asset('images/tarjeta.png')}}" alt="tarjeta_credito" width="200px">
+                
+                    <img src="{{asset('images/mastercar_visa.png')}}" alt="tarjetas_permitidas" width="100px">
+                </div>
+                
+                <div class="campos_reg bold">
+                    <label for="nombre_titular">Titular de la tarjeta<span class="red">*</span><br/></label>
+                    <input id="nombre_titular" name="nombre_titular" type="text" title="Nombre" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+                </div>
+                
+                <div class="campos_reg bold">
+                    <label for="dir_facturacion">Dirección de facturación<span class="red">*</span><br/></label> 
+                    <input id="dir_facturacion" name="facturacion" type="text" title="Dirección de facturación" placeholder="C/San Antonio, 25" size="50"/> <!-- required /> -->
+                </div>
+                
+                <div class="campos_reg bold">
+                    <label for="num_tarjeta">Nº Tarjeta de crédito<span class="red">*</span><br/></label> 
+                    <input id="num_tarjeta" name="num_card" type="text" title="Número de la tarjeta de crédito. (e.g. 0000 1111 2222 3333)" placeholder="Escriba aqui" size="50" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}"/> <!-- required /> -->
+                </div>
+                
+                <div id="selectores_fecha" class="campos_reg bold">
+                    <p class="campos_reg">Mes y año<span class="red">*</span></p>
+                    
+                    <select id="mes">
+                        <option selected>Enero</option>
+                        <option>Febrero</option>
+                        <option>Marzo</option>
+                        <option>Abril</option>
+                        <option>Mayo</option>
+                        <option>Junio</option>
+                        <option>Julio</option>
+                        <option>Agosto</option>
+                        <option>Septiembre</option>
+                        <option>Octubre</option>
+                        <option>Noviembre</option>
+                        <option>Diciembre</option>
+                    </select>
+                    <select id="año">
+                        <option>2019</option>
+                        <option selected>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                        <option>2025</option>
+                        <option>2026</option>
+                        <option>2027</option>
+                        <option>2028</option>
+                    </select>
+                </div>
+                
+                <div class="campos_reg bold">
+                    <label for="cvc">CVC<span class="red">*</span><br/></label>
+                    <input id="cvc" name="name_cvc" type="text" title="CVC (e.g. 000)" placeholder="000" size="50" pattern="[0-9]{3}" />  <!-- required /> -->
+                </div>
+                    
+                <div id="errMsg_card" class="error bold red " style="display: none"></div>
+                    
+                <button id="a_envio" class="bold" title="Siguiente paso del registro">Siguiente</button>
+            </form>
+        </div>
+            
+            
+            
+        <div id="id_paypal" style="display: none">
+                
+            <form id="datos_registro2_paypal">
+            
+                <img src="{{asset('images/paypal.png')}}" alt="pago_paypal" width="200px">
+            
+                <div class="campos_reg bold">
+                    <label for="email_paypal">Email Paypal<span class="red">*</span><br/> </label>
+                    <input id="email_paypal" name="email_paypal" type="email" title="Email Paypal" placeholder="tecnocomponentes@gmail.com" size="50"/> <!-- required /> -->
+                </div>
+                
+                <div class="campos_reg bold">
+                    <label for="password_paypal">Contraseña Paypal<span class="red">*</span><br/> </label>
+                    <input id="password_paypal" name="password_paypal" type="password" title="Contraseña de su cuenta en Paypal" placeholder="Escriba aquí" size="50"/>  <!-- required /> -->
+                </div>
+                
+                <div id="errMsg" class="error bold red" style="display: none"></div>
+                
+                <button id="a_envio" class="bold" title="Siguiente paso del registro">Siguiente</button>
+            </form>
+        </div>
+    
+    
+    <p id="volverAtras"><a href="{{path('areaCliente')}}">Volver atrás</a></p>
+    
+    </div>
+
+
+{% block javascripts %} <script src="{{asset('funciones/metodos_pago.js')}}"></script> {% endblock %}
+
+
+{% endblock %} 

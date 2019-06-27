@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Carrito de {{user.nombre}}{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/carrito.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+    <div class="div_main">
+        <div id="tu_pedido">
+            <h3>Tu carrito:</h3>
+                                
+            {% for elemento in elementos %}
+                <div id="producto_1">
+                    <a href="{{ path('producto', {producto_id : elemento.getProducto.producto_id}) }}" title="{{elemento.getProducto.name}}"><img class="zooms" src="{{asset(elemento.getProducto.getImages.first.getImg_g)}}" alt="imagen_{{elemento.getProducto.getImages.first.getImg_g}}" width="150px"></a>
+                    <p><b>Producto:</b> <a href="{{ path('producto', {producto_id : elemento.getProducto.producto_id}) }}">{{elemento.getProducto.name}}</a> - <b>Fabricante: </b><span id="precio_producto_1">{{elemento.getProducto.fabricante}}</span></p>
+                    <p><b>Ref: </b><span id="precio_producto_1">{{elemento.getProducto.ref}}</span> - <b>Precio: </b><span id="precio_producto_1">{{elemento.getProducto.precio}}</span>€</p>
+                    <div id="sumar_restar_productos">
+                    
+                    <form id="eliminar" action="{{ path('carrito_eliminar_producto_post') }}" method="post">
+                        <div style="display: none"><input id="id_elemento" name="id_elemento" type="text" title="id_elemento" size="10" value="{{elemento.getIdElemento}}"/></div>
+
+                        <button id="eliminar_producto" class="b_envio1 red bold" title="Eliminar todos">X Eliminar</button>
+                    </form>
+                        
+                </div>
+                <div id="linea_negra"></div>
+                    
+                </div>
+            {% endfor %}
+
+            <div id="pedido_down">
+                {% if not vacio %}
+                    <div id="total_productos">
+                        <label class="bold">Total: {{ total_carrito }}</label>
+                        <span id="id_total_carrito" class="total_carrito bold"></span> <span class="bold">€</span>
+                    </div>
+            
+                    <form id="eliminar_todos" action="{{ path('carrito_eliminar_productos_post') }}" method="post">
+                        <button id="eliminar_productos" class="b_envio2 red bold" title="Eliminar todos">X Eliminar todos</button>
+                    </form>
+                {% endif %}
+            </div>
+            
+        </div>
+        
+        <div id="realizar_pedido">
+            <p>Número total de artículos: {{total_articulos}}</span> </p>
+            <p>Subtotal: {{total_carrito}}€</p>
+            <p>Total: </span>{{total_carrito}}€ IVA incluido</p>
+            {% if not vacio %}
+                <a href="{{path('finalizar-compra')}}" title="Realizar Pedido"><div id="boton_realizar_pedido" class="bold">Realizar pedido</div></a>
+            {% endif %}
+        </div>
+    </div>
+
+{% block javascripts %} <script src="{{asset('funciones/carrito.js')}}"></script> {% endblock %}
+
+{% endblock %}

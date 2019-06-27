@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Añadir Categoría{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/registro.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="registro" class="div_main">
+    <h3>AÑADIR NUEVA CATEGORIA</h3>
+    
+    <form id="datos_registro" action="{{ path('add-categoria_post') }}" method="post">
+        
+        <div class="campos_reg bold">
+            <label for="acronimo">Acrónimo<span class="red">*</span><br/></label>
+            <input id="acronimo" name="acronimo" type="text" title="Nombre de tienda (min.4 - max.30)" minlength="4" maxlength="30" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+        </div>
+        
+        <div class="campos_reg bold">
+            <label for="nombre">Nombre Categoría<span class="red">*</span><br/></label>
+            <input id="nombre" name="nombre" type="text" title="Nombre" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+        </div>
+
+        <div class="campos_reg bold">
+            <label for="descripcion">Descripción<span class="red">*</span><br/></label>
+            <input id="descripcion" name="descripcion" type="text" title="descripcion" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+        </div>
+        
+        <div id="errMsg" class="error bold red" style="display: none"></div>
+        
+        <button id="a_envio" class="bold" title="Añadir categoria">AÑADIR</button>
+    </form>
+</div>
+
+{% block javascripts %} <script src="{{asset('funciones/add-categoria.js')}}"></script> {% endblock %}
+
+   
+{% endblock %}

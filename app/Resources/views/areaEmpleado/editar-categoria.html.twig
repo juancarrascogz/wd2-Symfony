@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Editar Categoría{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/areaAdmin.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="areaAdmin" class="div_main">
+                    
+<h3>EDITAR CATEGORIA</h3>
+{% for categ in categorias %}
+    {% if categ.visible != 0 %}
+        <ul>
+            <li><a href="{{ path('editar-datos-categoria', {id_catg : categ.getIdCatg}) }}">{{categ.categoria}}</a></li>
+        </ul>
+    {% endif %}
+{% endfor %}
+</div>
+   
+{% endblock %}

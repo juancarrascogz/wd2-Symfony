@@ -1,0 +1,65 @@
+
+/* --------PEDIDOS DE UN CLIENTE------------------*/
+#pedidos_clientes h3{
+    margin:1%;
+}
+#pedidos_clientes p{
+    margin-left: 10%;
+}
+#pedidos_clientes_c{
+    display: inline-block;
+    width: 48%;
+    height: 74%;
+    max-width: 450px;
+    padding: 2%;
+}
+
+#pedidos_clientes .listas_pedidos{
+    margin-left: 7%;
+    margin-top: 3%;
+}
+#pedidos_clientes .listas_pedidos li{
+    margin-top: 2%;
+}
+#pedidos_clientes .listas_pedidos{
+    list-style: none;
+}
+#pedidos_clientes .listas_pedidos a{
+    text-decoration: none;
+    color: #000;
+}
+#pedidos_clientes .listas_pedidos a:hover{
+    color: #6600cc;
+}
+#pedidos_clientes .listas_pedidos a:active{
+    color: #ff8000;
+}
+/* ------------------------------------------------ */
+
+
+/* ----------------PASO PÁGINAS------------------*/
+#paso_paginas{
+    height: 5%;
+    width: 100%;
+    margin-top: 8%;
+    float:right;
+    display: inline-block;
+}
+#paso_paginas nav ul li{
+    list-style:none;
+    float: right;
+}
+#paso_paginas nav ul li a{
+    color: #000;
+    text-decoration: none;
+    padding: 2px 15px;
+    display: block;
+    font-weight: bold;
+}
+#paso_paginas nav ul li a:hover{
+    color: #6600cc;
+}
+#paso_paginas nav ul li a:active{
+    color: #ff8000;
+}
+/* -----------------------------------------*/

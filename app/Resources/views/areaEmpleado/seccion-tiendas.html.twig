@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Sección Tiendas{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/seccionTiendas.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="seccionTiendas" class="div_main_short">
+                    
+    <h3>PORTAL EMPLEADOS - TIENDAS</h3>
+    <ul>
+    {% for tienda in tiendas %}
+            <li><a href="{{ path('seccion-tienda', {tiendas_id : tienda.getTiendas_id}) }}">{{tienda.nombre}}</a></li>
+    {% endfor %}
+
+        <li><a href="{{path('areaEmpleado')}}">Volver atrás</a></li>
+    </ul>
+</div>
+
+{% endblock %}

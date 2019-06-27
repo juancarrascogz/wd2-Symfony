@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Promociones {{user.nombre}}{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/tusPromos.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="tus_promociones" class="div_main">
+        <h2>Promociones de {{user.nombre}}</h2>
+        <div id="puntos">
+            <h3>Puntos acumulados</h3>
+                <p>Tienes un total de: <span class="green">{{user.getDatosClientes.puntos}} puntos</span></p>
+        </div>
+
+        <article>
+            <h3><br/>Portátil HP</h3>
+            <p>Consíguelo por: <span class="green"> 2500 puntos</span></p>
+            <div class="zoom">
+                <a href="#" title="Promoción HDD + USB 64GB"><img src="{{asset('images/hp.png')}}" width="200px" alt="tu_promo_HP"></a>
+            </div>
+        </article>
+        <article>
+            <h3 id="teclado_raton">Teclado + ratón</h3>
+            <p>Consíguelo por: <span class="green">80 puntos</span></p>
+            <div class="zoom">
+                <a href="#" title="Teclados con ratón de regalo"><img src="{{asset('images/teclado+raton.jpg')}}" width="200px" alt="promo_RyT"></a>
+            </div>
+        </article>
+
+        <p id="volverAtras"><a href="{{path('areaCliente')}}">Volver atrás</a></p>
+    </div>
+    
+
+
+{% endblock %}

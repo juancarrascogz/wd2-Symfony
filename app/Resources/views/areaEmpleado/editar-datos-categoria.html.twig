@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Editar Categoría{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/misDatos.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="misDatos" class="div_main">
+                
+    <h3>Editar Categoría</h3>
+    <form id="datos_cambio" action="{{ path('editar-datos-categoria_post') }}" method="post">
+            <div class="campos_reg bold">
+                    <label for="acronimo_cambios">Acrónimo<span class="red">*</span><br/></label>
+                    <input id="acronimo_cambios" name="acronimo_cambios" type="text" title="Nombre de tienda (min.4 - max.30)" minlength="4" maxlength="30" placeholder="Escriba aqui" size="50" value="{{categoria.acronimo}}"/>  <!-- required /> -->
+                </div>
+                
+                <div class="campos_reg bold">
+                    <label for="nombre_cambios">Nombre Categoría<span class="red">*</span><br/></label>
+                    <input id="nombre_cambios" name="nombre_cambios" type="text" title="Nombre" placeholder="Escriba aqui" size="50" value="{{categoria.categoria}}"/>  <!-- required /> -->
+                </div>
+
+                <div class="campos_reg bold">
+                    <label for="descripcion_cambios">Descripción<span class="red">*</span><br/></label>
+                    <input id="descripcion_cambios" name="descripcion_cambios" type="text" title="descripcion" placeholder="Escriba aqui" size="50" value="{{categoria.descripcion}}"/>  <!-- required /> -->
+                </div>
+
+                <div style="display: none"><input id="id_catg" name="id_catg" type="text" title="id_catg" size="10" value="{{categoria.getIdCatg}}"/></div>
+
+        <div id="errMsg_cambios" class="error bold red" style="display: none"></div>
+
+        <button id="guardar_cambios" class="bold" title="Guardar cambios">Guardar Cambios</button>
+    </form>
+                        
+</div>
+
+{% block javascripts %} <script src="{{asset('funciones/editar-categoria.js')}}"></script> {% endblock %}
+
+   
+{% endblock %}

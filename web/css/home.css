@@ -1,0 +1,135 @@
+
+/* -----------------HOME------------------------*/
+/*div imagen promo y div destacados dentro de 1 solo div home*/
+#home{
+    width: 75%;
+    height: 90%;
+    max-width: 1400px;
+    margin: 30px auto;
+    float: right;
+    margin-right: 4%;
+    display: block;
+}
+/* -----------------------------------------*/
+
+
+/* --------------IMAGEN PROMO HOME------------*/
+/* div imagenes promocionales */
+#home #imagen_promocional{
+    background-color: #f8d648;
+    border: 10px solid #6600cc;
+    width: 100%;
+    height: 25%;
+    max-width: 1400px;
+    margin: 30px auto;
+    float: right;
+    display: block;
+}
+#home #imagen_promocional img{ /* imagenes promocionales */
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: 0px auto;
+}
+/* -----------------------------------------*/
+
+
+/* -----------------DESTACADOS-----------------*/
+/* div para los destacados */
+#destacados{
+    /*background-color: #fff;*/
+    border: 10px solid #6600cc;
+    width: 100%;
+    height: 45%;
+    max-width: 1400px;
+    display: inline-block;
+    float: right;
+}
+
+/* div dentro de div destacados para que ocupa la parte de arriba para text lo más destacado */
+#lo_mas_destacado{
+    width: 100%;
+    height: 15%;
+}
+#lo_mas_destacado h2{
+    color: #000;
+    text-decoration: underline;
+    padding: 1% 1%;
+}
+
+/* ------------LISTA DESTACADOS--------------*/
+
+/* div dentro de div destacados ocupa parte inferior para lista de productos destacados */ 
+#lista_destacados{
+    width: 100%;
+    height: 85%;
+}
+
+/* articles dentro del div destacados */
+#lista_destacados article{
+    background-color: #fff;
+    border: 10px solid #6600cc;
+    margin-left: 4%;
+    display: inline-block;
+    height: 70%;
+    width: 25%;
+}
+#lista_destacados article h3{
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+#lista_destacados article h3 a{
+    text-decoration: none;
+    color: #000;
+}
+#lista_destacados article h3 a:hover{
+    color: #6600cc;
+}
+#lista_destacados article h3 a:active{
+    color: #ff8000;
+}
+#lista_destacados article a img{
+    display: block;
+    margin: auto;
+}
+#lista_destacados article p{
+    text-align: center;    
+}
+/* -----------------------------------------*/
+
+/*----------LISTA DE VISTA RÁPIDA, ALERTAS, FAV, CART --------*/
+.lista_botones{
+    float:left;
+     left:50%;
+     list-style-type:none;
+     margin:0 auto;
+     padding:0;
+     position:relative;
+}
+.lista_botones li{
+    display: inline-block;
+    list-style: none;
+    float:left;
+    position:relative;
+    right:50%;
+    margin-top: 15%;
+    padding-right: 5px;
+}
+.lista_botones li a{
+    font-size: 1.3em;
+    text-decoration: none;
+    color: #000;
+    margin: 15%;
+}
+.lista_botones li a:hover{
+    display: inline-block;
+    color: #6600cc;
+    cursor:pointer;
+    transition: .3s;
+    transform: scale(1.3);
+}
+.lista_botones li a:active{
+    color: #ff8000;
+}
+/* ------------------------------------------------ */

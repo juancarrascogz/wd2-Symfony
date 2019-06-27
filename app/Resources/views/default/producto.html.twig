@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - {{producto.name}}{% endblock %}
+
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/producto.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="producto" class="div_main_short">                  
+    <div id="producto_izq">
+        <div id="producto_izq_up">
+            {% if producto.promocion == 1 %}
+                <a href="" title="{{producto.name}}"><img src="{{asset(producto.getImages.first.getImg_1)}}" alt="{{producto.name}}" width="100px"></a>
+            {% else %}
+                <a href="" title="{{producto.name}}"><img src="{{asset(producto.getImages.first.getImg_g)}}" alt="{{producto.name}}" width="100px"></a>
+            {% endif %}
+        </div>
+        <div id="producto_izq_down">
+            <ul>
+                <li><a href=""><img src="{{asset(producto.getImages.first.getImg_1)}}" alt="{{producto.name}} 1" width="80px"></a></li>
+                <li><a href=""><img src="{{asset(producto.getImages.first.getImg_2)}}" alt="{{producto.name}} 2" width="80px"></a></li>
+                <li><a href=""><img src="{{asset(producto.getImages.first.getImg_3)}}" alt="{{producto.name}} 3" width="80px"></a></li>
+                <li><a href=""><img src="{{asset(producto.getImages.first.getImg_4)}}" alt="{{producto.name}} 4" width="80px"></a></li>
+            </ul>
+            {% if carrito %}
+                {% if cliente %}
+                    {% if disponible %}
+                        <form id="datos_registro" action="{{ path('producto_post') }}" method="post">
+
+                            <div style="display: none"><input id="producto_id" name="producto_id" type="text" title="producto_id" size="10" value="{{producto.getProducto_id}}"/></div>
+                            <div style="display: none"><input id="carrito" name="carrito" type="text" title="carrito" size="10" value="{{carrito}}"/></div>
+
+                            <button id="a_envio" class=" b_envio bold" title="Añadir categoria">Añadir al carrito</button>
+                        </form>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                {% if disponible %}
+                    {% if not empleado %}
+                        <a href="{{path('login')}}" title="Añadir al carrito"><div id="boton_añadir" class="bold">Añadir al carrito</div></a>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </div>
+        </div>
+        
+        <div id="producto_der">
+            <h3>{{producto.name}}</h3>  
+
+            <div id="linea_morada"></div>
+            <h2>{{producto.precio}}€ <span>impuestos incluidos.</span></h2>
+
+            {% if disponible %}
+                <h3>Stock: <span class="green">Disponible</span></h3>
+            {% else %} 
+                <h3>Stock: <span class="red">Agotado temporalmente</span></h3>
+            {% endif %}
+            <p>{{producto.descripcion}}</p>
+
+            <p>Valoración media: {{producto.valoracion}}</p>
+                
+            <p>Ref. {{producto.ref}}<br/>Fabricante: {{producto.fabricante}}</p>
+
+        <div id="caracteristicas">
+            <ul>
+                <li><a href="#" class="bold">Características</a></li>
+                <li><a href="#" class="bold">Descripción</a></li>
+                <li><a href="#" class="bold">Opiniones</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

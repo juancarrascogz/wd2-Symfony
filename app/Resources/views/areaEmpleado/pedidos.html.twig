@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Pedidos {{user.nombre}}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{asset('css/pedidos.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="pedidos" class="div_main_short">
+    <div id="pedidos_izq">
+        <h4>Últimos Pedidos (Pendiente de entrega):</h4>
+            <ol class="listas_pedidos">
+                {% for producto in carrito_pendiente %}
+                        <li> <a href="{{ path('producto', {producto_id : producto.producto_id}) }}"> {{producto.name}} - {{producto.precio}}€</a></li>
+                    {% endfor %}
+            </ol>
+    </div>
+        <div id="pedidos_der">
+        <h4>Últimas Compras (Entregados):</h4>
+            <ol class="listas_pedidos">
+                {% for producto in carrito_entregado %}
+                        <li> <a href="{{ path('producto', {producto_id : producto.producto_id}) }}"> {{producto.name}} - {{producto.precio}}€</a></li>
+                    {% endfor %}
+            </ol>
+    </div>
+
+</div>
+
+
+{% endblock %}

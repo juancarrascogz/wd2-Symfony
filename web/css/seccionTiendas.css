@@ -1,0 +1,33 @@
+#seccionTiendas h3{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-decoration: underline;
+}
+#seccionTiendas ul{
+    text-align: center;
+    list-style: none;
+}
+#seccionTiendas ul li{
+    margin-bottom: 2%;
+}
+#seccionTiendas ul li a{
+    text-decoration: none;
+    color: #000;
+}
+#seccionTiendas ul li a:hover{
+    color: #6600cc;
+}
+#seccionTiendas ul li a:active{
+    color: #ff8000;
+}
+.campos_reg{
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 1%;
+}
+.error{
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 1%;
+}

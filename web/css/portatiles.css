@@ -1,0 +1,126 @@
+
+/* ---------------PORTATILES--------------------------*/
+#h_portatiles{
+    width: 75%;
+    height: 90%;
+    max-width: 1400px;
+    margin: 30px auto;
+    float: right;
+    margin-right: 4%;
+    display: block;
+}
+#portatiles_1{
+    background-color: #fff;
+    border: 10px solid #6600cc;
+    width: 100%;
+    height: 90%;
+    max-width: 1400px;
+    margin: 10px auto;
+    margin-bottom: -10px;
+    float: right;
+    display: block;
+}
+/* ----------------LISTA PORTÁTILES-------------*/
+#lista_portatiles{
+    width: 100%;
+    height: 42%;
+}
+
+/* articles dentro del div destacados */
+#lista_portatiles article{
+    background-color: #fff;
+    border: 10px solid #6600cc;
+    margin-left: 4%;
+    margin-top: 7%;
+    display: inline-block;
+    height: 70%;
+    width: 25%;
+}
+#lista_portatiles article h3{
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+#lista_portatiles article h3 a{
+    text-decoration: none;
+    color: #000;
+}
+#lista_portatiles article h3 a:hover{
+    color: #6600cc;
+}
+#lista_portatiles article h3 a:active{
+    color: #ff8000;
+}
+#lista_portatiles article a img{
+    display: block;
+    margin: auto;
+}
+#lista_portatiles article p{
+    text-align: center;
+    
+}
+/* -----------------------------------------*/
+
+
+/*----------LISTA DE VISTA RÁPIDA, ALERTAS, FAV, CART --------*/
+.lista_botones{
+    float:left;
+     left:50%;
+     list-style-type:none;
+     margin:0 auto;
+     padding:0;
+     position:relative;
+}
+.lista_botones li{
+    display: inline-block;
+    list-style: none;
+    float:left;
+    position:relative;
+    right:50%;
+    margin-top: 15%;
+    padding-right: 5px;
+}
+.lista_botones li a{
+    font-size: 1.3em;
+    text-decoration: none;
+    color: #000;
+    margin: 15%;
+}
+.lista_botones li a:hover{
+    display: inline-block;
+    color: #6600cc;
+    cursor:pointer;
+    transition: .3s;
+    transform: scale(1.3);
+}
+.lista_botones li a:active{
+    color: #ff8000;
+}
+/* ------------------------------------------------ */
+
+/* ----------------PASO PÁGINAS------------------*/
+#paso_paginas{
+    height: 5%;
+    width: 45%;
+    margin-top: 1.3%;
+    float:right;
+    display: inline-block;
+}
+#paso_paginas nav ul li{
+    list-style:none;
+    float: right;
+}
+#paso_paginas nav ul li a{
+    color: #000;
+    text-decoration: none;
+    padding: 2px 15px;
+    display: block;
+    font-weight: bold;
+}
+#paso_paginas nav ul li a:hover{
+    color: #6600cc;
+}
+#paso_paginas nav ul li a:active{
+    color: #ff8000;
+}
+/* -----------------------------------------*/

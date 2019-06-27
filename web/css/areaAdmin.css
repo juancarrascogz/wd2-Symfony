@@ -1,0 +1,23 @@
+#areaAdmin h3{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-decoration: underline;
+}
+#areaAdmin ul{
+    text-align: center;
+    list-style: none;
+}
+#areaAdmin ul li{
+    margin-bottom: 2%;
+}
+#areaAdmin ul li a{
+    text-decoration: none;
+    color: #000;
+}
+#areaAdmin ul li a:hover{
+    color: #6600cc;
+}
+#areaAdmin ul li a:active{
+    color: #ff8000;
+}

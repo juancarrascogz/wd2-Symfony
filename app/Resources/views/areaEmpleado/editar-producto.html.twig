@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Editar Producto{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/areaAdmin.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="areaAdmin" class="div_main">              
+    <h3>EDITAR PRODUCTO</h3>
+        
+    <ul>
+        {% for pro in productos %}
+            <li><a href="{{ path('editar-datos-producto', {producto_id : pro.getProducto_id}) }}">{{pro.name}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+   
+{% endblock %}

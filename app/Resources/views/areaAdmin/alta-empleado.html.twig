@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Alta Empleado{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/registro.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="registro" class="div_main">
+    <h3>NUEVO ALTA EMPLEADO <span> (alta empleado)</span></h3>
+    
+    <form id="datos_registro" action="{{ path('alta-empleado_post') }}" method="post" enctype="multipart/form-data">
+        
+        <div class="campos_reg bold">
+            <label for="nombre">Nombre<span class="red">*</span><br/></label>
+            <input id="nombre" name="nombre" type="text" title="Nombre" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+        </div>
+        
+        <div class="campos_reg bold">
+            <label for="apellidos">Apellidos<span class="red">*</span><br/></label> 
+            <input id="apellidos" name="apellidos" type="text" title="Apellidos" placeholder="Escriba aqui" size="50"/> <!-- required /> -->
+        </div>
+
+        <div class="campos_reg bold">
+            <label for="dni">DNI<span class="red">*</span><br/></label>
+            <input id="dni" name="dni" type="text" pattern="[0-9]{8}[A-Za-z]{1}" title="DNI (e.g. 72243551L)" placeholder="Escriba aqui" size="50"/> <!-- required /> -->
+        </div>
+        
+        <div class="campos_reg bold">
+            <label for="email">Email<span class="red">*</span><br/> </label>
+            <input id="email" name="email" type="email" title="Email" placeholder="tecnocomponentes@gmail.com" size="50"/> <!-- required /> -->
+        </div>
+        
+        <div class="campos_reg bold">
+            <label for="repetir_email">Repetir Email<span class="red">*</span><br/></label> 
+            <input id="repetir_email" name="repetir_email" type="email" title="Repetir Email" placeholder="tecnocomponentes@gmail.com" size="50"/>  <!-- required /> -->
+        </div>
+        
+        <div class="campos_reg bold">
+            <label for="password">Contraseña<span class="red">*</span><br/> </label>
+            <input id="password" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe contener al menos un número, una mayúsucula, una minúscula, y al menos ser de 8 caracteres. (e.g.  abc1dEf8)" placeholder="Min 8 letras y numeros, mayusculas, ..." size="50"/>  <!-- required /> -->
+        </div>
+        
+        <div class="campos_reg bold">
+            <label for="repetir_password"></label>Repetir Contraseña<span class="red">*</span><br/> 
+            <input id="repetir_password" name="repetir_password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe contener al menos un número, una mayúsucula, una minúscula, y al menos ser de 8 caracteres. (e.g.  abc1dEf8)" placeholder="Min 8 letras y numeros, mayusculas, ..." size="50"/>  <!-- required /> -->
+        </div>
+        
+        <div class="campos_reg bold">
+            <label for="cargo_tienda">Cargo en la tienda<br/></label>
+            <input id="cargo_tienda" name="cargo_tienda" type="text" title="Cargo Tienda" placeholder="Escriba aqui" size="50"/> <!-- required /> -->
+        </div>
+
+        <div id="selector_tienda" class="campos_reg bold">
+            <p class="campos_reg">Tienda Asignada</p>
+                <select id="tienda_asignada" name="tienda_asignada">
+                    {% for tienda in tiendas %} 
+                        {% if tienda.visible != 0 %}
+                            <option value="{{tienda.getTiendas_id}}">{{tienda.nombre}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+        </div>
+
+        <div class="campos_reg bold">
+            <label for="archivo1">Foto<br/></label>
+            <input type="file" id="archivo1" name="archivo1" />
+        </div>
+        
+        <div id="errMsg" class="error bold red" style="display: none"></div>
+        
+        <button id="a_envio" class="bold" title="Siguiente paso del registro">Registrar</button>
+    </form>
+
+    <p class="atras"><a href="{{path('gestion-empleados')}}">Volver atrás</a></p>
+
+</div>
+
+{% block javascripts %} <script src="{{asset('funciones/registroEmpleado.js')}}"></script> {% endblock %}
+
+
+{% endblock %}

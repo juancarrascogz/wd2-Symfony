@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="description" content="Home_TecnoComponentes">
+        <meta name="author" content="HOBBITON">
+        <meta name="keywords" content="TecnoComponentes website">
+        <meta name="robots" content="Index, >Follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+
+        <title>{% block title %}TCP{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
+        
+        <link rel="stylesheet" type="text/css" href="{{asset('css/estilos.css')}}" media="all">
+
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+
+<div id="background">
+            <header>
+                <div id="logo"><img class="zooms" src="{{asset('images/logos/logo.png')}}" title="TecnoComponentes S.L." alt="logotipo" width="180px"></div>
+                
+                <div id="navi">
+                    <div id="caja_busqueda">
+                        <input type="search" placeholder="Buscar">
+                    </div>
+                    
+                    <div id="nav_header"> <!-- NAV HEADER - LOGIN - CARRITO - ETC -->
+                            <nav>
+                                <ul>
+                                    {% if loged %}
+                                        {% if carrito %}
+                                                <li><a class="fas fa-user" href="{{path('areaCliente')}}" title="Mi Perfil"></a></li>
+                                                <li><a href="{{path('carrito')}}" title="Carrito">Carrito</a></li>
+                                        {% else %}
+                                            {% if admin %} 
+                                                <li><a class="fas fa-user" href="{{path('areaAdministracion')}}" title="Mi Perfil"></a></li>
+                                            {% else %}
+                                                <li><a class="fas fa-user" href="{{path('areaEmpleado')}}" title="Mi Perfil"></a></li>
+                                            {% endif %}
+                                        {% endif %}
+
+                                    {% else %}
+                                        <li><a href="{{path('login')}}" title="Login">Login</a></li>
+                                    {% endif %}
+
+                                    <li><a href="" title="Favoritos">Favoritos</a></li>
+                                    <li><a href="" title="Ajustes">Ajustes</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                </div>
+            </header>
+                        
+            <section>
+                <div id="nav_H" class="bold"> <!-- NAV BODY - INCIO - PROMOCIONES - ETC -->
+                    <nav>
+                        <ul>
+                            <li><a href="{{path('promos')}}" title="Promociones">Promociones</a></li>
+                            <li><a href="{{path('tiendas')}}" title="Nuestras tiendas">Nuestras tiendas</a></li>
+                            <li><a href="{{path('quienes-somos')}}" title="¿Quiénes somos?">¿Quiénes somos?</a></li>
+                            <li><a href="{{path('homepage')}}" title="Inicio">Inicio</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div id="nav_V"> <!-- CATEGORIAS - PORTÁTILES - DISCOS DUROS - ETC -->
+                    <nav>
+                        <ul>
+                            {% for categ in categorias %}
+                                {% if categ.visible != 0 %}
+                                    <li><a href="{{ path('categoria', {id_catg : categ.getIdCatg}) }}" title="{{categ.categoria}}">{{ categ.Categoria }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                </div>
+
+                {% block body %}{% endblock %}
+
+            </section>
+
+            <footer>
+                <div id="footer_up">
+                    <article>
+                    <h3>Utilidades</h3>
+                    <ul>
+                        <li><a href="" title="Servicios">Servicios</a></li>
+                        <li><a href="" title="Soluciones empresas">Soluciones empresas</a></li>
+                        <li><a href="" title="Reparaciones">Reparaciones</a></li>
+                    </ul>
+                </article>
+                
+                <article>
+                    <h3>Secciones</h3>
+                    <ul>
+                        <li><a href="{{path('quienes-somos')}}" title="¿Quiénes somos?">¿Quiénes somos?</a></li>
+                        <li><a href="{{path('tiendas')}}" title="Tiendas">Tiendas</a></li>
+                        <li><a href="{{path('promos')}}" title="Promociones">Promociones</a></li>
+                    </ul>
+                </article>
+                
+                <article>
+                    <h3>Mi cuenta</h3>
+                    <ul>
+                        <li><a href="{{path('login')}}" title="Login">Login</a></li>
+                        <li><a href="{{ path('registro') }}" title="Registrarme">Registrarme</a></li>
+                    </ul>
+                </article>
+                
+                <article>
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="" title="Contacto">Contacto</a></li>
+                        <li><a href="" title="Políticas">Políticas</a></li>
+                        <li><a href="" title="Información Legal">Información Legal</a></li>
+                    </ul>
+                </article>
+                </div>
+                
+                <div id="footer_dw">
+                    <ul id="redes_sociales">
+                        <li><a class="fab fa-twitter" href="" title="Twitter"></a></li>
+                        <li><a class="fab fa-facebook" href="" title="Facebook"></a></li>
+                        <li><a class="fab fa-google-plus" href="" title="Google"></a></li>
+                        <li><a class="fab fa-youtube" href="" title="Youtube"></a></li>
+                        <li><a class="fab fa-android" href="" title="Android"></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+
+        {% block javascripts %}  {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,319 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+html, body{
+    height: 100%;
+    min-width: 1100px;
+    min-height: 1500px;
+    font-family: Verdana;
+}
+
+/*
+morado: rgba(102, 0, 204)   #6600cc
+azul:   rgba(51, 153, 255)   #3399ff
+negro:  rgba(46, 46, 31)     #2e2e1f
+*/
+
+#background{
+    background-color: rgba(51, 153, 255, 0.3); /* #3399ff */
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------------HEADER-------------------------*/
+header{
+    height: 10%;
+}
+
+/* div arriba izq. para logo */
+header #logo{
+    text-align: center;
+    background-color: rgba(51, 153, 255, 0);
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+}
+
+header #logo img{
+    cursor:default;
+}
+
+/* div arriba derecha = caja_búsqueda + login + favs... */
+header #navi{
+    /*background-color: red;*/
+    display: inline;
+    float: right;
+    width: 80%;
+    height: 50%;
+    margin-top: 3%;
+}
+
+/* dentro de navi - parte izquierda div para caja_búsqueda */
+header #navi #caja_busqueda{ 
+    background-color: #2e2e1f;
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+}
+header #navi #caja_busqueda input{
+    width: 70%;
+    margin-left: 45px;
+    margin-top: 25px;
+    max-width: 300px;
+}
+
+
+/* dentro de navi - parte derecha div para login+ajustes+favs... */
+header #navi #nav_header{
+    background-color: #2e2e1f;
+    display: inline-block;
+    float: right;
+    width: 60%;
+    height: 100%;
+}
+header #navi #nav_header nav ul{
+    width: 100%;
+    height: 100%;
+    list-style:none;
+}
+header #navi #nav_header nav ul li{
+    float: right;
+}
+header #navi #nav_header nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: 2px 2px #6600cc;
+    display: block;
+    padding: 28px 22px;
+}
+header #navi #nav_header nav ul li a:hover{
+    background-color: #564f4f;
+}
+header #navi #nav_header nav ul li a:active{
+    color: #3399ff;
+}
+/* -----------------------------------------*/
+
+/* div section -----------------------------*/
+section{
+    background-color: rgba(102, 0, 204, 0);
+    width: 100%;
+    margin-top: 3%;
+    height: 70%;
+}
+/* -----------------------------------------*/
+
+/* -----------NAVEGADOR HORIZONTAL---------*/
+/* dentro de section div nav_H = ¿Quiénes somos?... */
+section #nav_H{
+    background-color: #3399ff;
+    height: 6%; 
+}
+section #nav_H nav ul{
+    width: 100%;
+    height: 100%;
+    list-style:none;
+}
+section #nav_H nav ul li{
+    float: right;
+    min-width: 100px;
+}
+section #nav_H nav ul li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 20px 70px;
+    display: block;
+}
+section #nav_H nav ul li a:hover{
+    background-color: #75ACEC;
+}
+section #nav_H nav ul li a:active{
+    color: #fff;
+}
+/* -----------------------------------------*/
+
+/*---------- Navegador vertical -----------*/
+section #nav_V{
+    background-color: #3399ff;
+    display: inline-block;
+    width: 18%;
+    height: 93%;
+}
+section #nav_V nav ul{
+    width: 100%;
+    height: 100%;
+    list-style:none;
+}
+section #nav_V nav ul li a{
+    /*text-align: center;*/
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+}
+section #nav_V nav ul li a:hover{
+    background-color: #75ACEC;
+}
+section #nav_V nav ul li a:active{
+    color: #fff;
+}
+/* -----------------------------------------*/
+
+/* -------------DIV MAIN - FONDO BLANCO ENTERO ------------*/
+.div_main {
+    background-color: #fff;
+    border: 10px solid #6600cc;
+    width: 70%;
+    height: 85%;
+    max-width: 1100px; /*1100*/
+    margin: 30px auto;
+    float: right;
+    margin-right: 5%;
+    display: inline-block;
+    overflow: scroll;
+    overflow-x: auto;
+
+}
+/* -------------DIV MAIN - FONDO BLANCO MEDIO ------------*/
+.div_main_short{
+    background-color: #fff;
+    border: 10px solid #6600cc;
+    width: 70%;
+    height: 45%;
+    max-width: 1400px;
+    margin: 30px auto;
+    float: right;
+    margin-right: 5%;
+    margin-top: 5%;
+    display: inline-block;
+    overflow: scroll;
+    overflow-x: auto;
+
+}
+
+/* -----------------FOOTER------------------------*/
+/* footer */
+#footer_up{
+    width: 100%;
+    height: 75%;
+}
+#footer_dw{
+    width: 100%;
+    height: 25%;
+    max-width: 500px;
+}
+footer{    
+    background-color: #2e2e1f;
+    width: 100%;
+    height: 14%;
+}
+footer article{
+    float: left;
+    margin-top: 1%;
+    margin-left: 15%;
+    display: inline-block;
+    max-width: 100px;
+}
+footer article h3{
+    color: #3399ff;
+}
+footer article ul{
+    list-style:none;
+}
+footer article ul li a{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px auto;
+}
+footer article ul li a:hover{
+    color: #3399ff;
+}
+footer article ul li a:active{
+    color:#ff8000;
+}
+/* -----------REDES SOCIALES Y APPS------------------------------*/
+#redes_sociales{
+    margin-top: 2%;
+    margin-left: 26%;
+}
+#redes_sociales li{
+    display: inline-block;
+    list-style:none;
+    margin-left: 10%;
+}
+#redes_sociales li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.7em;
+}
+#redes_sociales li a:hover{
+    display: inline-block;
+    color: #3399ff;
+    cursor:pointer;
+    transition: .3s;
+    transform: scale(1.3);
+}
+#redes_sociales li a:active{
+    color: #ff8000;
+}
+/* -----------------------------------------*/
+
+.zooms:hover{
+    display: inline-block;
+    cursor:pointer;
+    transition: .3s;
+    transform: scale(1.03);
+}
+.green{
+    color: #13b516; 
+}
+.bold{
+    font-weight: bold;
+}
+.red{
+    color: #ff0000;
+}
+#a_envio{
+    display: block;
+    margin: 0px auto;
+    width: 30%;
+    font-size: 1.2em;
+    font-family: Verdana;
+    background-color: #3399ff;
+    padding: 2%;
+    margin-top: 3%;
+    box-shadow: 2px 2px 5px #999;
+}
+#a_envio:hover{
+    background-color: #75ACEC;
+}
+#a_envio:active{
+    color: #fff;
+    margin-top: 4%;
+}
+#registro .error {
+    text-align: center;
+    margin-top: 2%;
+}
+.atras{
+    text-align: center;
+    margin-top: 3%;
+}
+.linea_negra{
+    border: 2px solid #000;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.foto p{
+    text-align: center;
+    margin-bottom: 2%;
+}
+#selector_tienda{
+    margin-bottom: 3%;
+}

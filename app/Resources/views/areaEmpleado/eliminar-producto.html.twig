@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Eliminar Producto{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/seccionTiendas.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="seccionTiendas" class="div_main">
+                    
+    <h3>ELIMINAR PRODUCTO</h3>
+    <ul>
+        {% for pro in productos %}
+            <li>Nº {{pro.getProducto_id}} - {{pro.name}}</li>
+        {% endfor %}
+    </ul>
+    <div class="linea_negra"></div>
+    
+    <form id="datos_baja_empleado" action="{{ path('eliminar-producto_post') }}" method="post">
+        <div class="campos_reg bold">
+            <label for="numero_producto">Nº Producto a eliminar:</label>
+            <input id="numero_producto" name="numero_producto" type="text" title="Nombre" placeholder="Escriba aqui" size="20"/>  <!-- required /> -->
+        </div>
+                
+        <div id="errMsg" class="error bold red" style="display: none"></div>
+                
+        <button id="a_envio" class="bold" title="Eliminar producto">Eliminar</button>
+    </form>
+    
+</div>
+
+{% block javascripts %} <script src="{{asset('funciones/eliminar-producto.js')}}"></script> {% endblock %}
+
+   
+{% endblock %}

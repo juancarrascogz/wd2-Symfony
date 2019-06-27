@@ -1,0 +1,72 @@
+
+/* --------------MIS DATOS-------------------------*/
+#misDatos h3{
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+#misDatos .campos_reg{
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 1%;
+}
+#misDatos select{
+    display: block;
+    margin: auto;
+    width: 25%;
+    margin-top: 1%;
+}
+#email{
+    border:0;
+}
+#dni_cambios{
+    border:0;
+}
+#introducir_mas_datos{
+    margin-right: 35%;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+#introducir_mas_datos:hover{
+    color: #ff0000;
+}
+#guardar_cambios{
+    display: block;
+    margin: 0px auto;
+    width: 30%;
+    font-size: 1.2em;
+    font-family: Verdana;
+    background-color: #3399ff;
+    padding: 2%;
+    margin-top: 3%;
+    box-shadow: 2px 2px 5px #999;
+}
+#guardar_cambios:hover{
+    background-color: #75ACEC;
+}
+#guardar_cambios:active{
+    color: #fff;
+    margin-top: 4%;
+}
+#misDatos .error {
+    text-align: center;
+    margin-top: 2%;
+}
+#atras{
+    text-align: center;
+    margin-top: 5%;
+}
+#atras a{
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+#atras a:hover{
+    color: #6600cc;
+}
+#atras a:active{
+    color: #ff8000;
+}
+/* -----------------------------------------*/

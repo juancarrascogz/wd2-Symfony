@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Gestión Empleados{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/areaAdmin.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="areaAdmin" class="div_main_short">
+                    
+    <h3>GESTIÓN EMPLEADOS</h3>
+    <ul>
+        <li><a href="{{path('alta-empleado')}}" title="Alta Empleado">Alta Empleado</a></li>
+        <li><a href="{{path('editar-empleado')}}" title="Edición Empleado">Edición Empleado</a></li>
+        <li><a href="{{path('baja-empleado')}}" title="Baja Empleado">Baja Empleado</a></li>
+        <li><a href="{{path('listado-empleados')}}" title="Listado Empleados">Listado Empleados</a></li>
+    </ul>
+    <p class="atras"><a href="{{path('areaAdministracion')}}">Volver atrás</a></p>
+
+</div>
+
+{% endblock %}

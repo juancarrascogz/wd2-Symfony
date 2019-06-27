@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Datos de {{cliente_data.nombre}}{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/misDatos.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="misDatos" class="div_main">
+                
+    <h3>Datos de {{cliente_data.nombre}}</h3>
+    <form id="datos_cambio" action="{{ path('mis-datos_post') }}" method="post">
+            <div class="campos_reg bold">
+                <label for="nombre_usuario_cambios">Nombre Usuario<span class="red">*</span><br/></label>
+                <input id="nombre_usuario_cambios" name="nombre_usuario_cambios" type="text" title="Nombre de usuario (min.4 - max.30)" minlength="4" maxlength="30" size="50" value="{{cliente_data.username}}"/>  <!-- required /> -->
+            </div>
+
+            <div class="campos_reg bold">
+                <label for="nombre_cambios">Nombre<span class="red">*</span><br/></label>
+                <input id="nombre_cambios" name="nombre_cambios" type="text" title="Nombre" size="50" value="{{cliente_data.nombre}}"/>  <!-- required /> -->
+            </div>
+
+            <div class="campos_reg bold">
+                <label for="apellidos_cambios">Apellidos<span class="red">*</span><br/></label> 
+                <input id="apellidos_cambios" name="apellidos_cambios" type="text" title="Apellidos" size="50" value="{{cliente_data.apellidos}}"/> <!-- required /> -->
+            </div> 
+
+            <div class="campos_reg bold">
+                    <label for="dni_cambios">DNI (no modificable)<br/></label>
+                    <input id="dni_cambios" name="dni_cambios" type="text" pattern="[0-9]{8}[A-Za-z]{1}" title="DNI (e.g. 72243551L)" placeholder="Escriba aqui" size="50" value="{{cliente_data.dni}}" readonly/> <!-- required /> -->
+            </div>
+
+            <div class="campos_reg bold">
+                    <label for="email">Email (no modificable)<br/> </label><input id="email" name="email" type="email" title="Email" placeholder="tecnocomponentes@gmail.com" size="50" value="{{cliente_data.email}}" readonly/> <!-- required /> -->
+            </div>
+
+            <div id="p_telefono_cambios" class="campos_reg bold">
+                <label for="telefono_cambios">Teléfono<br/> </label>
+                <input id="telefono_cambios" name="telefono_cambios" type="tel" title="Teléfono (e.g. 985000999 - 983 222 850 - 955 666852 - 975 52 25 14)" size="50" pattern="[0-9]{9}|[0-9]{3} [0-9]{3} [0-9]{3}|[0-9]{3} [0-9]{6}|[0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}" value="{{cliente_data.getDatosClientes.telefono}}"/> <!-- required /> -->
+            </div>
+
+            <div id="p_direccion_cambios" class="campos_reg bold">
+                <label for="direccion_cambios">Dirección<span class="red">*</span><br/></label>
+                <input id="direccion_cambios" name="direccion_cambios" type="text" title="Dirección" size="50" value="{{cliente_data.getDatosClientes.direccion_facturacion}}"/>  <!-- required /> -->
+            </div>
+
+            <div id="errMsg_cambios" class="error bold red" style="display: none"></div>
+
+            <button id="guardar_cambios" class="bold" title="Guardar cambios">Guardar Cambios</button>
+    </form>
+    
+    <p id="atras"><a href="{{path('areaCliente')}}">Volver atrás</a></p>
+    
+</div>
+
+{% block javascripts %} <script src="{{asset('funciones/misDatos.js')}}"></script> {% endblock %}
+
+
+{% endblock %}

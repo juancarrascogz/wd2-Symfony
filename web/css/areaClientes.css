@@ -1,0 +1,23 @@
+#areaClientes h3{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-decoration: underline;
+}
+#areaClientes ul{
+    text-align: center;
+    list-style: none;
+}
+#areaClientes ul li{
+    margin-bottom: 2%;
+}
+#areaClientes ul li a{
+    text-decoration: none;
+    color: #000;
+}
+#areaClientes ul li a:hover{
+    color: #6600cc;
+}
+#areaClientes ul li a:active{
+    color: #ff8000;
+}

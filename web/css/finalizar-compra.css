@@ -1,0 +1,75 @@
+/* --------PEDIDOS DE UN CLIENTE------------------*/
+#pedidos_izq{
+    display: inline-block;
+    width: 48%;
+    height: 94%;
+    max-width: 450px;
+    padding: 2%;
+}
+#pedidos_der{
+    float: right;
+    width: 44%;
+    height: 94%;
+    max-width: 450px;
+    padding: 2%;
+}
+#pedidos_izq h3{
+    margin-bottom: 1%; 
+}
+#pedidos_izq h4{
+    margin-top: 4%; 
+}
+#pedidos_der h4{
+    margin-top: 4%;
+}
+#pedidos .listas_pedidos{
+    margin-left: 7%;
+    margin-top: 3%;
+}
+#pedidos .listas_pedidos li{
+    margin-top: 2%;
+}
+
+#pedidos_izq p{
+    margin-top: 20%; 
+}
+#pedidos_der p{
+    margin-top: 5%;
+}
+#atras{
+    margin-left: 20%;
+    margin-top: 5%;
+}
+#atras a{
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+#atras a:hover{
+    color: #6600cc;
+}
+#atras a:active{
+    color: #ff8000;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+}
+.boton_finalizar_compra{
+    background-color: #3399ff;
+    padding: 1em;
+    max-width: 250px;
+    min-width: 250px;
+    box-shadow: 2px 2px 5px #999;
+    display: block;
+    margin-top: 6%;
+}
+.boton_finalizar_compra:hover{
+    background-color: #75ACEC;
+}
+.boton_finalizar_compra:active{
+    color: #fff;
+    margin-top: 7%;
+}
+/* ------------------------------------------------ */

@@ -1,0 +1,83 @@
+
+/* -------------- MÉTODO DE PAGO -------------------------*/
+#metodosPago h3{
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+#metodosPago h3 span{
+    font-size: .8em;
+}
+#metodosPago .campos_reg{
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 1%;
+}
+#metodosPago select{
+    display: block;
+    margin: auto;
+    width: 25%;
+    margin-top: 1%;
+}
+#introducir_mas_datos{
+    margin-right: 35%;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+#introducir_mas_datos:hover{
+    color: #ff0000;
+}
+#a_envio{
+    display: block;
+    margin: 0px auto;
+    width: 30%;
+    font-size: 1.2em;
+    font-family: Verdana;
+    background-color: #3399ff;
+    padding: 2%;
+    margin-top: 3%;
+    box-shadow: 2px 2px 5px #999;
+}
+#a_envio:hover{
+    background-color: #75ACEC;
+}
+#a_envio:active{
+    color: #fff;
+    margin-top: 4%;
+}
+#metodosPago .error {
+    text-align: center;
+    margin-top: 2%;
+}
+
+#boton_paypal{
+    margin-left: 3%;
+}
+#id_card img{
+    display: block;
+    margin: auto;
+    margin-top: 2%;
+}
+#id_paypal img{
+    display: block;
+    margin: auto;
+}
+
+#volverAtras{
+    text-align: center;
+    margin-top: 5%;
+}
+#volverAtras a{
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+#volverAtras a:hover{
+    color: #6600cc;
+}
+#volverAtras a:active{
+    color: #ff8000;
+}
+/* -----------------------------------------*/

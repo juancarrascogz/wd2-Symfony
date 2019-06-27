@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Área Empleado Nº{{user.getEmpleados.getNumEmpleado}}{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/areaEmpleado.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+    <div id="areaEmpleados" class="div_main_short">
+                    
+        <h3>Portal Empleados - {{user.email}}</h3>
+        <ul>
+            <li><a href="{{path('seccion-tiendas')}}">Tiendas</a></li>
+            <li><a href="{{path('gestion-catalogo')}}">Gestión Catálogo</a></li>
+            <li><a href="{{path('logout')}}">SALIR</a></li>
+        </ul>
+        
+    </div>
+
+{% endblock %}

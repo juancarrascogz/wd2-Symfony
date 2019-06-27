@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Área {{user.nombre}}{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/areaClientes.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+    <div id="areaClientes" class="div_main_short">
+                    
+        <h3>Portal {{user.nombre}}</h3>
+            
+        <ul>
+            <li><a href="{{path('mis-datos')}}">Mis Datos</a></li>
+            <li><a href="{{path('mis-datos-change-password')}}">Cambiar Contraseña</a></li>
+            <li><a href="{{path('metodos-pago')}}">Métodos Pago</a></li>
+            <li><a href="{{path('tus-promos')}}">Mis Promociones</a></li>
+            <li><a href="{{path('mis-pedidos')}}">Mis Pedidos / Últimas Compras</a></li>
+            <li><a href="{{path('monedero')}}">Monedero</a></li>
+            <li><a href="{{path('logout')}}">SALIR</a></li>
+        </ul>
+        
+    </div>
+
+{% endblock %} 

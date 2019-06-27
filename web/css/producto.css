@@ -1,0 +1,134 @@
+
+/* ---PRODUCTO - ESPECIFICACIÓN, ... ETC -------IZQUIERDA--------*/
+#producto_izq{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    max-width: 450px;
+}
+#producto_izq_up{
+    height: 50%;
+}
+#producto_izq_up a img{
+    width: auto;
+    height: 70%;
+    display: block;
+    margin: 0px auto;
+    padding-top: 10%;
+}
+#producto_izq_up img:hover{
+    cursor:pointer;
+    transition: .3s;
+    transform: scale(1.19);   
+}
+#producto_izq_down{
+    height: 50%;
+}
+#producto_izq_down ul{
+    padding-top: 5%;
+}
+#producto_izq_down ul li{
+    list-style:none;
+    float: right;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+#producto_izq_down ul li:hover{
+    cursor:pointer;
+    transition: .3s;
+    transform: scale(1.19);
+}
+#producto_izq_down ul li a{
+    text-decoration: none;
+}
+#producto_izq_down a{
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+}
+#boton_añadir{
+    background-color: #3399ff;
+    padding: 1em;
+    max-width: 100px;
+    min-width: 220px;
+    box-shadow: 2px 2px 5px #999;
+    display: block;
+    margin: auto;
+    margin-top: 20%;
+}
+#boton_añadir:hover{
+    background-color: #75ACEC;
+}
+#boton_añadir:active{
+    color: #fff;
+    margin-top: 22%;
+}
+/* -----------------------------------------*/
+
+
+/* ---PRODUCTO - ESPECIFICACIÓN, ... ETC -------DERECHA--------*/
+#producto_der{
+    background-color: #fff;
+    float: right;
+    width: 48%;
+    height: 100%;
+    max-width: 450px;
+    padding-right: 2%;
+}
+#producto_der h3{
+    margin-top: 10%;
+}
+#linea_morada{
+    background-color: #6600cc;
+    height: 1%;
+    margin-top: 3%;
+    width: 30%;
+}
+#producto_der h2{
+    margin-top: 3%;
+}
+#producto_der h2 span{
+    font-size: .5em; 
+}
+#caracteristicas{
+    margin-top: 10%;
+    
+}
+#caracteristicas ul li{
+    list-style:none;
+    float: left;
+    margin-right: 3%;
+}
+#caracteristicas ul li a{
+    text-decoration: none;
+    color: #000;
+}
+#caracteristicas ul li a:hover{
+    color: #6600cc;
+}
+#caracteristicas ul li a:active{
+    color: #ff8000;
+}
+#producto_der p{
+    margin-top: 3%;
+    display: inline-block;
+}
+#producto_der .valoraciones{
+    display: inline-block;
+}
+#producto_der .valoraciones li{
+    list-style:none;
+    float: left;
+}
+#producto_der .valoraciones a{
+    color: #ffd700;
+    text-decoration: none;
+}
+.b_envio{
+    text-align: center;
+    min-width: 250px;
+}
+#producto_izq_down ul li{
+    margin-bottom: 5%;
+}
+/* -----------------------------------------*/

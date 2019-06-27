@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Añadir Producto{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/registro.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="registro" class="div_main">
+    <h3>AÑADIR NUEVO PRODUCTO</h3>
+    
+    <form id="datos_registro" action="{{ path('add-producto_post') }}" method="post">
+        
+        <div class="campos_reg bold">
+            <label for="acronimo">Acrónimo<span class="red">*</span><br/></label>
+            <input id="acronimo" name="acronimo" type="text" title="Nombre de tienda (min.4 - max.30)" maxlength="30" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+        </div>
+        
+        <div class="campos_reg bold">
+            <label for="nombre">Nombre Producto<span class="red">*</span><br/></label>
+            <input id="nombre" name="nombre" type="text" title="Nombre" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+        </div>
+
+        <div class="campos_reg bold">
+            <label for="descripcion">Descripción<span class="red">*</span><br/></label>
+            <input id="descripcion" name="descripcion" type="text" title="descripcion" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+        </div>
+
+        <div class="campos_reg bold">
+            <label for="precio">Precio Producto<span class="red">*</span><br/></label>
+            <input id="precio" name="precio" type="text" title="Nombre" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+        </div>
+
+        <div class="campos_reg bold">
+            <label for="ref">Referencia del Producto<span class="red">*</span><br/></label>
+            <input id="ref" name="ref" type="text" title="Nombre" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+        </div>
+
+        <div class="campos_reg bold">
+            <label for="fabricante">Fabricante del Producto<span class="red">*</span><br/></label>
+            <input id="fabricante" name="fabricante" type="text" title="Nombre" placeholder="Escriba aqui" size="50"/>  <!-- required /> -->
+        </div> 
+
+        <div class="campos_reg bold">
+            <label for="upfile">Foto Producto<br/></label>
+            <input type="file" id="upfile" name="upfile" />
+        </div>
+
+        <div id="selector_tienda" class="campos_reg bold">
+            <p class="campos_reg">Categoria Asignada</p>
+                <select id="categoria_asignada" name="categoria_asignada">
+                    {% for categ in categorias %}
+                        {% if categ.visible != 0 %}
+                            <option value="{{categ.getIdCatg}}">{{categ.categoria}}</option>                             
+                        {% endif %}
+                    {% endfor %}
+                </select>
+        </div>
+        
+        <div id="errMsg" class="error bold red" style="display: none"></div>
+        
+        <button id="a_envio" class="bold" title="Añadir categoria">AÑADIR</button>
+    </form>
+
+</div>
+
+{% block javascripts %} <script src="{{asset('funciones/add-producto.js')}}"></script> {% endblock %}
+
+   
+{% endblock %}

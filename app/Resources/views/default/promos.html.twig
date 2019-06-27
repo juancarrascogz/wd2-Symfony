@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Promociones{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/promos.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="promociones" class="div_main">
+    <h2>Promociones</h2>
+    <article>
+        <h3><a href="{{ path('categoria', {id_catg : 4}) }}">Monitores</a></h3>
+        <p>Al 15% de descuento<br/><br/></p> 
+        <div class="zoom">
+            <a href="{{ path('categoria', {id_catg : 4}) }}" title="Monitores al 15% descuento"><img src="{{asset('images/monitor.png')}}" width="100px" alt="promo_Monitor"></a>
+        </div>
+    </article>
+    <article>
+        <h3><a href="{{ path('categoria', {id_catg : 8}) }}"><br/>Discos Duros</a></h3>
+        <p>Memoria USB 64 GB de regalo con tu nuevo disco duro<br/><br/></p> 
+        <div class="zoom">
+            <a href="{{ path('categoria', {id_catg : 8}) }}" title="Promoción HDD + USB 64GB"><img src="{{asset('images/discoduro.png')}}" width="100px" alt="promo_HDD"></a>
+        </div>
+    </article>
+    <article>
+        <h3><a href="{{ path('categoria', {id_catg : 16}) }}"><br/><br/>Teclados</a></h3>
+        <p>Teclados con ratón de regalo<br/><br/></p>
+        <div class="zoom">
+            <a href="{{ path('categoria', {id_catg : 16}) }}" title="Teclados con ratón de regalo"><img src="{{asset('images/teclado.png')}}" width="100px" alt="promo_RyT"></a>
+        </div>
+    </article>
+    <article>
+        <h3><a href="{{ path('categoria', {id_catg : 7}) }}"><br/><br/><br/>Memorias RAM</a></h3>  
+        <p>Al 20% descuento<br/><br/></p>
+        <div class="zoom">
+            <a href="{{ path('categoria', {id_catg : 7}) }}" title="Memorias RAM al 20% descuento"><img src="{{asset('images/memoriaRAM.png')}}" width="100px" alt="promo_RAM"></a>
+        </div>
+    </article>
+</div>
+
+   
+{% endblock %}

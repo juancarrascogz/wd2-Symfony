@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Baja Empleado{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/seccionTiendas.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="seccionTiendas" class="div_main">
+                    
+    <h3>PORTAL ADMINISTRACION - BAJA EMPLEADO</h3>
+    <ul>
+        {% for user in users %}
+            {% if user.getEmpleados.getActivo == true %}
+                {% if user.getEmpleados.getNumEmpleado != 1 %}
+                    <li>Nº {{user.getEmpleados.getNumEmpleado}} - {{user.nombre}} {{user.apellidos}} / Cargo: {{user.getEmpleados.getCargo}}</li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <div class="linea_negra"></div>
+    
+    <form id="datos_baja_empleado" action="{{ path('baja-empleado_post') }}" method="post">
+        <div class="campos_reg bold">
+            <label for="numero_empleado">Nº Empleado a dar de baja:</label>
+            <input id="numero_empleado" name="numero_empleado" type="text" title="Nombre" placeholder="Escriba aqui" size="20"/>  <!-- required /> -->
+        </div>
+                
+        <div id="errMsg" class="error bold red" style="display: none"></div>
+                
+        <button id="a_envio" class="bold" title="Dar de baja empleado">Dar de Baja</button>
+    </form>
+    
+    <p class="atras"><a href="{{path('gestion-empleados')}}">Volver atrás</a></p>
+</div>
+
+{% block javascripts %} <script src="{{asset('funciones/bajaEmpleado.js')}}"></script> {% endblock %}
+
+{% endblock %}

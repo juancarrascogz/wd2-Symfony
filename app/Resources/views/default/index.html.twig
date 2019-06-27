@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Inicio{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/home.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+    <div id="home">
+        <div id="imagen_promocional" class="zooms"> <!-- IMG PROMOCIONAL -->
+                    
+            {% for pro in productos %}
+                {% if pro.promocion == 1 %}
+                    <a href="{{ path('producto', {producto_id : pro.getProducto_id}) }}" title="Imagen promocional"><img src="{{asset(pro.getImages.first.getImg_g)}}" width="100px" alt="imagen_promocional"></a>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div id="destacados">
+            <div id="lo_mas_destacado">
+                <h2>Lo más destacado</h2>
+            </div>
+            <div id="lista_destacados"> <!-- LISTA DESTACADOS -->
+
+            {% for pro in productos %}
+                {% if pro.destacados == 1 %}
+                    <article>
+                        <h3><a href="{{ path('producto', {producto_id : pro.getProducto_id}) }}" title="{{pro.name}}">{{pro.name}}</a></h3>
+                        <a href="{{ path('producto', {producto_id : pro.getProducto_id}) }}" title="Portátil Asus"><img  class="zooms" src="{{asset(pro.getImages.first.getImg_g)}}" alt="portatil" width="{{pro.getImages.first.tam}}px"></a>
+                        <p class="bold">Precio: {{pro.precio}}€</p>
+                        <p class="bold">Stock: <span class="green"> disponible</span></p>
+                        
+                        <ul class="lista_botones">
+                            <li><a class="fas fa-eye" href="#" title="Vista rápida"></a></li>
+                            <li><a class="fas fa-bell" href="#" title="Alertas"></a></li>
+                            <li><a class="fas fa-heart" href="#" title="Favoritos"></a></li>
+                        </ul>
+                    </article>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

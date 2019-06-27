@@ -1,0 +1,16 @@
+#fTVal ul{
+    list-style: none;
+    text-align: center;
+}
+#fTVal ul li{
+    margin-bottom: 1%;
+}
+
+#ftmapV{
+    margin-top: 5%;
+}
+
+#fTVal p{
+    text-align: center;
+    margin-top: 3%;
+}

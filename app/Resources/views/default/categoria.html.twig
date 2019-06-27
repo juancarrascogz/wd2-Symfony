@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - {{categoria.categoria}}{% endblock %}
+
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/portatiles.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="h_portatiles">
+    <div id="portatiles_1">
+        <div id="lista_portatiles">
+
+        {% for pro in productos %}
+            {% if pro.promocion == 0 %}
+                <article>
+                    <h3><a href="{{ path('producto', {producto_id : pro.getProducto_id}) }}" title="{{pro.name}}">{{pro.name}}</a></h3>
+                    <a href="{{ path('producto', {producto_id : pro.getProducto_id}) }}" title="Portátil Asus"><img  class="zooms" src="{{asset(pro.getImages.first.getImg_g)}}" alt="portatil" width="{{pro.getImages.first.tam}}px"></a>
+                    <p class="bold">Precio: {{pro.precio}}€</p>
+                    <p class="bold">Fabricante: <span class="green">{{pro.fabricante}}</span></p>
+                                        
+                    <ul class="lista_botones">
+                        <li><a class="fas fa-eye" href="#" title="Vista rápida"></a></li>
+                        <li><a class="fas fa-bell" href="#" title="Alertas"></a></li>
+                        <li><a class="fas fa-heart" href="#" title="Favoritos"></a></li>
+                    </ul>
+                </article>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    
+    <div id="paso_paginas">
+        <nav>
+            <ul>
+                <li><a href="#" title="Siguiente página">Siguiente</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#" title="Página anterior">Anterior</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock %}

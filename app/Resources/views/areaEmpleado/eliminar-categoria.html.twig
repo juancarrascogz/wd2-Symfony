@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Eliminar Categoría{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/seccionTiendas.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="seccionTiendas" class="div_main">
+                    
+    <h3>ELIMINAR CATEGORIA</h3>
+    <ul>
+        {% for categ in categorias %}
+            {% if categ.visible != 0 %}
+                <li>Nº {{categ.getIdCatg}} - {{categ.categoria}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <div class="linea_negra"></div>
+    
+    <form id="datos_baja_empleado" action="{{ path('eliminar-categoria_post') }}" method="post">
+        <div class="campos_reg bold">
+            <label for="numero_categoria">Nº Categoría a eliminar:</label>
+            <input id="numero_categoria" name="numero_categoria" type="text" title="Nombre" placeholder="Escriba aqui" size="20"/>  <!-- required /> -->
+        </div>
+                
+        <div id="errMsg" class="error bold red" style="display: none"></div>
+                
+        <button id="a_envio" class="bold" title="Dar de baja empleado">Eliminar</button>
+    </form>
+    
+</div>
+
+{% block javascripts %} <script src="{{asset('funciones/eliminar-categoria.js')}}"></script> {% endblock %}
+
+   
+{% endblock %}

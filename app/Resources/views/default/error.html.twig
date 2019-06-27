@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Error{% endblock %}
+
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/quienes.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="quienes_somos" class="div_main_short">
+
+    <p>Ha ocurrido un error. Por favor, inténtelo de nuevo</p>
+    
+{% endblock %}

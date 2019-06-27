@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Pedidos Tienda - {{tienda.nombre}}{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/pedidosTienda.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+
+<div id="pedidosT" class="div_main">
+                        
+    <div id="pedidosTienda">
+            <h3>Tienda {{tienda.nombre}}</h3>
+            <h4>ÚLTIMOS PEDIDOS</h4>
+            <ol class="listas_pedidos">
+            {% for ele in elementos_pendientes %}
+                <li>{{ele.getProducto.name}}</li>
+            {% endfor %} 
+            </ol>
+            
+    <div id="paso_paginas">
+        <nav>
+            <ul>
+                <li><a href="#" title="Siguiente página">Siguiente</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#" title="Página anterior">Anterior</a></li>
+            </ul>
+        </nav>
+    </div>
+        
+    </div>
+        
+</div>
+
+
+{% endblock %}

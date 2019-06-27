@@ -1,0 +1,45 @@
+
+/* -----------------TUS PROMOCIONES-------------------*/
+#tus_promociones h2{
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 2%;
+}
+#puntos{
+    text-align: center;
+    margin-top: 3%;
+}
+#tus_promociones article{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    max-width: 1400px;
+    max-height: 120px;
+}
+#tus_promociones article p{
+    margin-bottom: 5%;
+}
+#tus_promociones .zoom:hover{
+    display: inline-block;
+    cursor:pointer;
+    transition: .3s;
+    transform: scale(1.2);
+}
+#teclado_raton{
+    margin-top: 20%;
+}
+#volverAtras{
+    margin-left: 10%;
+    margin-top: 18%;
+}
+#volverAtras a{
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+#volverAtras a:hover{
+    color: #6600cc;
+}
+#volverAtras a:active{
+    color: #ff8000;
+}

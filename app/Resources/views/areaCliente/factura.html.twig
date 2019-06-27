@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="description" content="WireDelta Tech Sample">
+        <meta name="author" content="Juan Carrasco">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="charset" content="utf-8">
+        <title>TCP - Factura</title>
+        <link rel="stylesheet" type="text/css" href="{{asset('css/factura.css')}}" media="all">
+    </head>
+    
+    <body>
+        <div id="background" class="">
+                <div class="header1">
+                    <div class="header2">
+                        <img src="{{asset('images/logos/logo_horizontal.png')}}" width="350"> 
+                    </div>
+                    <div class="header3">
+                        <div class="date">
+                            <div class="date" style="font-size: 0.8em">
+                                <p id="day" class="day"></p>
+                                <p id="numberDay" class="numberDay"></p>
+                                <p id="month" class="month"></p>
+                                <p id="year" class="year"></p>
+                            </div>
+                            
+                            <p style="font-size: 0.8em">TecnoComponentes - Poligono de la Mora, 149-A</p>
+                            <p style="font-size: 0.8em">Email: central@tecnocomponentes@gmail.com</p>
+                            <p style="font-size: 0.8em">Teléfono: 983 445 566</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section1">
+                    <div class="section2">
+                        <h3>Productos comprados:</h3>
+                    </div>
+                    <div class="section3">
+                        <div class="section4">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Cantidad</th>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tbody id="dataTasks">
+                                  <tr>
+                                      <td id="cantidad">
+                                        {% for elemento in elementos_comprados %}
+                                            <p>1</p>
+                                        {% endfor %}
+                                      </td>
+                                      
+                                      <td id="producto">
+                                          {% for elemento in elementos_comprados %}
+                                            <p>{{elemento.producto.name}}</p>
+                                        {% endfor %}
+                                      </td>
+                                      <td id="precio">
+                                          {% for elemento in elementos_comprados %}
+                                            <p>{{elemento.producto.precio}}€</p>
+                                        {% endfor %}
+                                      </td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="section5">
+                            <div class="section6">
+                                <h3 style="text-align: center">FACTURAR A</h3>
+                                <p style="font-size: 1em; text-align: center;">{{user.nombre}} {{user.apellidos}}</p>
+                                <p style="font-size: 1em; text-align: center;">{{user.email}}</p>
+                                <p style="font-size: 1em; text-align: center;">{{user.getDatosClientes.direccion_facturacion}}</p>
+                                <p style="font-size: 1em; text-align: center;">{{user.getDatosClientes.telefono}}</p>
+                            </div>
+                            <div class="section7">
+                                <h3 style="text-align: center">SUBTOTAL: {{subtotal}}€</h3></br>
+                                <p style="font-size: 0.8em; text-align: center;">IVA (21%):  {{iva}}€</p>
+                                {% if gastos_envio != null %}
+                                    <p style="font-size: 0.8em; text-align: center;">Gastos de envío: {{gastos_envio}}€</p></br>
+                                    <h3 style="text-align: center">TOTAL: {{total_envio}}€</h3></br>
+                                {% else %}
+                                    </br><h3 style="text-align: center">TOTAL: {{total}}€</h3></br>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="footer1">
+                    <div class="footer2">
+                        <p style="text-align: center" id="atras"><a href="{{path('areaCliente')}}">Volver área cliente</a></p>
+                    </div>
+                    <div class="footer3">
+                        <a href="javascript:print()" style="margin-left: 40%">Imprimir</a>
+                    </div>
+                </div>
+            
+        </div>
+        
+        <script src="{{asset('funciones/factura.js')}}"></script>
+    </body>
+</html>

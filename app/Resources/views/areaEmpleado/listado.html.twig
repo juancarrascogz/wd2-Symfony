@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Listado - {{tienda.nombre}}{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/listado.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+
+<div id="listado" class="div_main">
+    <h2>LISTADO PRODUCTOS</h2>
+        <table cellpadding="10" cellspacing=40>
+            <theader>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Stock</th>
+                <th>Tienda</th>
+                <th>Traslado</th>
+            </theader>
+            <tbody>
+            {% set stock = 0 %}
+                {% for pro in productos %}
+                    {% for ele in elementos %}
+                       {% if pro.getProducto_id == ele.getProducto.getProducto_id %} {% set stock=stock+1 %} {% endif %}
+                    {% endfor %}
+                        <tr>
+                            <td>{{pro.ref}}</td>
+                            <td>{{pro.name}}</td>
+                            <td><span>{{stock}}</span></td> 
+                            <td>{{tienda.nombre}}</td>
+                            <td><a href="{{ path('trasladar-producto', {producto_id : pro.getProducto_id, stock : stock, tiendas_id : tienda.getTiendas_id}) }}" title="Trasladar a otra tienda">TRASLADAR</a></td>
+                        </tr>
+                    {% set stock = 0 %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div id="paso_paginas">
+            <nav>
+                <ul>
+                    <li><a href="#" title="Siguiente página">Siguiente</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#" title="Página anterior">Anterior</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Tienda {{tienda.nombre}}{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/fichaTiendaValladolid.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="fTVal" class="div_main_short">
+                    
+    <ul>
+        <li id="ftmapV"><a href="{{tienda.href}}" title="Mapa de calle {{tienda.calle}}" target="_blank"><img class="redondeo_mapas" src="{{asset(tienda.img)}}" width="400px" alt="tienda_{{tienda.nombre}}_mapa"></a></li>
+        <li>Tienda TecnoComponentes {{tienda.nombre}}</li>
+        <li>{{tienda.calle}} - {{tienda.nombre}}</li>
+        <li>{{tienda.tel}}</li>
+        <li>Horario: Lunes-Sábados de 09h-21h</li> <li>tecnocomponentes{{tienda.nombre}}@tecnoCompenentes.com</li>
+    </ul>
+
+<p><a href="{{path('tiendas')}}">Volver atrás</a></p>
+</div>
+
+   
+{% endblock %}

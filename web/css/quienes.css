@@ -1,0 +1,15 @@
+/* ---------------QUIENES SOMOS-------------- */
+#quienes_somos h2{
+    text-align: center;
+    text-decoration: underline; 
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+#quienes_somos h4{
+    margin-left: 2%;
+    margin-bottom: -2%;
+}
+#quienes_somos p{
+    margin: 2%;
+}
+/* -----------------------------------------*/

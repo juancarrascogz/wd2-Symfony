@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Mondero {{user.nombre}}{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/monedero.css')}}" media="all">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/popup.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="monedero" class="div_main_short">
+                    
+<h3>MONEDERO</h3>
+    <p id="saldo"><span class="bold">Saldo (€):</span><input type="number" id="saldo_actual" name="saldo_actual" title="Saldo actual" readonly value="{{user.getDatosClientes.saldo}}"></p>
+
+<div id="agregar_Saldo">
+        
+    <button id="btn-abrir-popup" class="btn-abrir-popup">Agregar Saldo</button>
+
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+            <h3>AGREGAR SALDO</h3>
+            
+            <form id="form_agregar_saldo" action="{{ path('monedero_post') }}" method="post">
+                <div class="contenedor-inputs">
+                    <p>Nombre titular tarjeta de crédito</p>
+                    <input id="titular_tarjeta" name="titular_tarjeta" type="text" title="Nombre titular de la tarjeta de crédito." placeholder="Escriba aquí"/>
+                </div>
+                <div class="contenedor-inputs">
+                    <p>Agregar tarjeta de crédito</p>
+                    <input id="num_tarjeta" name="num_tarjeta" type="text" title="Número de la tarjeta de crédito. (e.g. 0000 1111 2222 3333)" placeholder="0000 0000 0000 0000" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}"/>
+                </div>
+                <div class="contenedor-inputs">
+                    <p>Agregar cantidad en €</p>
+                    <input type="number" id="saldo_agregado" name="saldo_agregado" title="Saldo a añadir" placeholder="Saldo" min="0">
+                </div>
+
+                <input type="submit" id="btn_agregar_saldo" name="btn_agregar_saldo" class="btn-submit" title="Agregar saldo seleccionado"  value="Agregar">
+            </form>
+        </div>
+    </div>
+</div>
+<p id="atras"><a href="{{path('areaCliente')}}">Volver atrás</a></p>
+</div>
+    
+
+{% block javascripts %} <script src="{{asset('funciones/monedero.js')}}"></script> {% endblock %}
+
+{% endblock %}

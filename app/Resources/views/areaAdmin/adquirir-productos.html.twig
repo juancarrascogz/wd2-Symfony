@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Adquirir Productos{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/areaAdmin.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="areaAdmin" class="div_main">
+                    
+    <h3>ELIGE EL PRODUCTO DEL QUE QUIERAS MÁS ELEMENTOS</h3>
+        
+    <ul>
+        {% for pro in productos %}
+            <li><a href="{{ path('adquirir-elementos-producto', {producto_id : pro.getProducto_id}) }}">{{pro.name}}  </a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

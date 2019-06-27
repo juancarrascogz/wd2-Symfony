@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Editar Empleado{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/areaAdmin.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="areaAdmin" class="div_main">
+                    
+    <h3>PORTAL ADMINISTRACIÓN  - EDITAR EMPLEADO</h3>
+        
+    <ul>
+        {% for user in users %}
+            {% if user.getEmpleados.activo == true %}
+                    <li><a href="{{ path('editar-datos-empleados', {idUsuarios : user.getIdUsuarios}) }}">{{user.dni}} - {{user.nombre}} {{user.apellidos}} - Cargo: {{user.getEmpleados.cargo}} </a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <p class="atras"><a href="{{path('gestion-empleados')}}">Volver atrás</a></p>
+</div>
+
+{% endblock %}

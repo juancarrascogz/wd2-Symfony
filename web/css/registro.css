@@ -1,0 +1,58 @@
+
+/* --------------REGISTRO-------------------------*/
+#registro h3{
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+#registro h3 span{
+    font-size: .8em;
+}
+#registro .campos_reg{
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 1%;
+}
+#registro select{
+    display: block;
+    margin: auto;
+    width: 25%;
+    margin-top: 1%;
+}
+#introducir_mas_datos{
+    margin-right: 35%;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+#introducir_mas_datos:hover{
+    color: #ff0000;
+}
+#a_envio{
+    display: block;
+    margin: 0px auto;
+    width: 30%;
+    font-size: 1.2em;
+    font-family: Verdana;
+    background-color: #3399ff;
+    padding: 2%;
+    margin-top: 3%;
+    box-shadow: 2px 2px 5px #999;
+}
+#a_envio:hover{
+    background-color: #75ACEC;
+}
+#a_envio:active{
+    color: #fff;
+    margin-top: 4%;
+}
+#registro .error {
+    text-align: center;
+    margin-top: 2%;
+}
+.atras{
+    text-align: center;
+    margin-top: 3%;
+}
+/* -----------------------------------------*/

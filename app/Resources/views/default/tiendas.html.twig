@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Tiendas{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('css/tiendas.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="nuestras_tiendas" class="div_main">
+    <h2>Nuestras tiendas</h2>
+    
+    {% for tienda in tiendas %} 
+        {% if tienda.visible != 0 %}
+                <article>            
+                    <h3><a href="{{ path('ficha-tienda', {tiendas_id : tienda.getTiendas_id}) }}" title="Tienda {{tienda.nombre}}">{{tienda.nombre}}</a></h3>
+                    <p>{{tienda.calle}}<br/><br/></p>
+                    <div class="zoom">
+                        <a href="{{tienda.href}}" title="Mapa de calle {{tienda.calle}}" target="_blank"><img class="redondeo_mapas" src="{{asset(tienda.img)}}" width="300px" alt="tienda_{{tienda.nombre}}_mapa"></a>
+                    </div>       
+                </article>
+        {% endif %}
+    {% endfor %}
+
+</div>
+
+   
+{% endblock %}

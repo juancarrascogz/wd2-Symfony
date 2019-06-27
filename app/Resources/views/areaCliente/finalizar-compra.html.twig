@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Finalizar Compra{% endblock %}
+
+{% block stylesheets %}        
+    <link rel="stylesheet" type="text/css" href="{{asset('css/finalizar-compra.css')}}" media="all">
+{% endblock %}
+
+{% block body %}
+
+<div id="pedidos" class="div_main_short">
+    <div id="pedidos_izq">
+        <h4>Lista productos de su compra:</h4>
+            <ol class="listas_pedidos">
+                {% for elemento in elementos %}
+                        <li> {{elemento.producto.name}} - {{elemento.producto.precio}}€</li>
+                {% endfor %}
+            </ol>
+    </div>
+        <div id="pedidos_der">
+        <h4>Seleccionar método de entrega: </br></br></h4>
+            <div class="campos_reg bold">
+                <input type="radio" name="clase_tienda" id="boton_tienda" value="tienda" checked> <b>Entrega en tu tienda</b></br></br>
+                <input type="radio" name="clase_tienda" id="boton_envio" value="envio"> <b>Envío a domicilio: 4.99€</b>
+            </div>
+            <p>Número total de artículos: {{total_articulos}}</span> </p>
+            <p>Subtotal (recogida en tienda): {{total_carrito}}€</p></br>
+
+            <div id="id_tienda">
+                <form id="datos_finalizar_compra_tienda" action="{{ path('finalizar-compra_tienda_post') }}" method="post">
+                    <div id="id_tienda" class="total_c">Total: </span>{{total_carrito}}€ IVA incluido</div> <!-- RECOGIDA EN TIENDA -->
+                    <div style="display: none"><input id="total_carrito" name="total_carrito" type="text" title="total_carrito" size="10" value="{{total_carrito}}"/></div>
+                    
+                    <button id="a_envio" class=" b_envio bold boton_finalizar_compra" title="Realizar Pedido">Finalizar Compra</button>
+                    {% if msg != null %}
+                        </br></br><span style="color: red; font-size: 1.3em">{{msg}}</span>
+                    {% endif %}
+                </form>
+            </div>
+            <div id="id_envio" style="display: none">
+                <form id="datos_finalizar_compra_envio" action="{{ path('finalizar-compra_envio_post') }}" method="post">
+                    <div id="id_envio" class="total_c">Total: </span>{{total_carrito_envio}}€ IVA incluido + (4,99€)</div> <!-- CON GASTOS DE ENVÍO -->
+                    <div style="display: none"><input id="total_carrito_envio" name="total_carrito_envio" type="text" title="total_carrito_envio" size="10" value="{{total_carrito_envio}}"/></div>
+                    
+                    <button id="a_envio" class=" b_envio bold boton_finalizar_compra" title="Realizar Pedido">Finalizar Compra</button>
+                    {% if msg != null %}
+                        </br></br><span style="color: red; font-size: 1.3em">{{msg}}</span>
+                    {% endif %}
+                </form>
+            </div>
+    </div>
+
+</div>
+
+
+{% block javascripts %} <script src="{{asset('funciones/envio-productos.js')}}"></script> {% endblock %}
+
+{% endblock %}
+
+
+
+            
